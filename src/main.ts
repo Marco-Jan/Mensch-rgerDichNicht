@@ -1,6 +1,7 @@
 import { Player } from "./Components/player";
 import { Play } from "./State/play";
 import { StartScreen } from "./View/startscreen";
+import { PlayField } from "./View/playfield";
 
 //--------------------------------------------------AUSFÜHRUNG-----------------------------------------
 const start = new StartScreen();
@@ -8,8 +9,10 @@ const startButton = document.getElementById("startButton");
 
 startButton!.addEventListener("click", () => {
   console.log("hello start");
-
-  const play = new Play(start);
+  const boardSelection = document.getElementById("boardSelection") as HTMLSelectElement;
+  const selectedBoard = parseInt(boardSelection.value, 10);
+  const playField = new PlayField(selectedBoard); 
+  const play = new Play(start, selectedBoard);
   const myPlayer1 = new Player("red");
   play.addPlayer(myPlayer1);
 

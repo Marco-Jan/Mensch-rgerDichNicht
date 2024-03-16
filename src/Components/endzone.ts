@@ -13,3 +13,5 @@ class Endzone{
     }
 
 }
+
+export {Endzone};

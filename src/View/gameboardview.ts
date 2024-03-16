@@ -9,8 +9,8 @@ class GameBoardUi {
   playField: PlayField;
   playerZones: PlayerZones;
   gameCubeUi: GameCubeUi;
-  constructor() {
-    this.playField = new PlayField();
+  constructor(selectedBoard: number) {
+    this.playField = new PlayField(selectedBoard);
     this.playerZones = new PlayerZones();
     this.gameCubeUi = new GameCubeUi();
   }
@@ -39,7 +39,12 @@ class GameBoardUi {
     for (let i = 0; i < gameBoard.gameboard.length; i++) {
       const figure = gameBoard.gameboard[i] as Figure;
       const playField = document.getElementById(`playfield-${i}`) as HTMLDivElement;
-      playField.className = "playContainer";
+if (playField) {
+    playField.className = "playContainer";
+    // Weitere Logik, um mit playField zu arbeiten
+} else {
+    console.error(`Element mit ID playfield-${i} nicht gefunden.`);
+}
       if (gameBoard.gameboard[i] !== 0) {
         playField.classList.add(`${figure.color}Figure`);
         playField.classList.add(`figure`);

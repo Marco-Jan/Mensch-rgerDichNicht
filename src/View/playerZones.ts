@@ -11,6 +11,8 @@ class PlayerZones{
     private blueReserve: number[][];
     private yellowReserve: number[][];
     private greenReserve: number[][];
+
+    //startpoints, endzones and reserve banks are set here
     constructor(){
         this.redEndzone = [[9,5],[8,5],[7,5],[6,5]];
         this.blueEndzone = [[5,1],[5,2],[5,3],[5,4]];

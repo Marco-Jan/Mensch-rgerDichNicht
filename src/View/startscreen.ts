@@ -34,7 +34,17 @@ class StartScreen {
     p4.id = "playerFour";
     container?.appendChild(p4);
 
-    const startButton = document.createElement("button");
+    const boardSelection = document.createElement("select");
+    boardSelection.id = "boardSelection";
+    ["Spielbrett 1", "Spielbrett 2", "Spielbrett 3"].forEach((board, index) => {
+      const option = document.createElement("option");
+      option.value = String(index + 1); // 1, 2, oder 3 als Wert
+      option.textContent = board;
+      boardSelection.appendChild(option);
+    });
+    container?.appendChild(boardSelection);
+
+    const startButton = document.createElement("Button");
     startButton.textContent = "Start";
     startButton.id = "startButton";
     container?.appendChild(startButton);

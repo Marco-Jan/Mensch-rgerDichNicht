@@ -16,12 +16,12 @@ class Play {
   private gameRules: GameRules;
   private startScreen: StartScreen;
 
-  constructor(startScreen: StartScreen) {
+  constructor(startScreen: StartScreen, selectedBoard:number) {
     this.gameBoard = new GameBoard();
     this.players = [];
     this.currentPlayerIndex = 0;
     this.gameCube = new GameCube();
-    this.gameBoardUi = new GameBoardUi();
+    this.gameBoardUi = new GameBoardUi(selectedBoard);
     this.createNewGame();
     this.gamePhase = 0;
     this.gameRules = new GameRules();

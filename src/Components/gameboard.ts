@@ -18,13 +18,13 @@ class GameBoard{
                     this.figureStartPoint = 0;          
                 }
                 else if(player.color == "blue"){
-                    this.figureStartPoint = 10
+                    this.figureStartPoint = 10;
                 }
                 else if(player.color == "green"){
-                    this.figureStartPoint = 20
+                    this.figureStartPoint = 20;
                 }
                 else if(player.color == "yellow"){
-                    this.figureStartPoint = 30                  
+                    this.figureStartPoint = 30;                  
                 }
                 if(this.isOccupied(this.figureStartPoint)){
                     this.resetFigure(this.figureStartPoint);
